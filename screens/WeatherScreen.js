@@ -8,10 +8,13 @@ import {
     ActivityIndicator,
     SafeAreaView,
     ScrollView,
+    Button,
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const WeatherApp = () => {
+    const navigation = useNavigation();
     const [currentForecastIndex, setCurrentForecastIndex] = useState(0);
     const [location, setLocation] = useState('Singapore');
     const [weatherData, setWeatherData] = useState(null);
@@ -252,6 +255,9 @@ const WeatherApp = () => {
                     </View>
                 )}
                 <View style={styles.spacer}></View>
+                <Button
+                    title="Go to Activity Screen"
+                    onPress={() => navigation.navigate('Activity')}/>
             </ScrollView>            
     
             {/* Fixed footer - always at bottom */}

@@ -5,6 +5,7 @@ import WeatherScreen from './screens/WeatherScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
+import ActivityScreen from './screens/ActivityScreen';
 
 // Create stack navigator
 const Stack = createStackNavigator();
@@ -18,6 +19,7 @@ export default function App()
           <Stack.Navigator initialRouteName='Login'>
             <Stack.Screen name="Login" component={LoginScreen} /> 
             <Stack.Screen name="Weather" component={WeatherScreen} />
+            <Stack.Screen name="Activity" component={ActivityScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
